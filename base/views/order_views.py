@@ -45,6 +45,7 @@ def addOrderItems(request):
 
         # (3) Create order items adn set order to orderItem relationship
         for i in orderItems:
+            print(i)
             product = Product.objects.get(_id=i['product'])
 
             item = OrderItem.objects.create(
