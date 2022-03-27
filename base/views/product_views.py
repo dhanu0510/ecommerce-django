@@ -57,7 +57,7 @@ def createProduct(request):
     user = request.user
 
     product = Product.objects.create(
-        user=user,
+
         name='Sample Name',
         price=0,
         brand='Sample Brand',
