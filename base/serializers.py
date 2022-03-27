@@ -40,11 +40,18 @@ class UserSerializerWithToken(UserSerializer):
 
 
 class ProductSerializer(serializers.ModelSerializer):
+    user = serializers.SerializerMethodField(read_only=True)
+
     class Meta:
         model = Product
         # fields = ['_id', 'name', 'image', 'brand', 'category', 'description',
         #   'rating', 'numReviews', 'price', 'countInStock', 'createdAt']
         fields = '__all__'
+
+    def get_user(self, obj):
+        user = obj.user
+        serializer = UserSerializer(user, many=True)
+        return serializer.data
 
 
 class ShippingAddressSerializer(serializers.ModelSerializer):

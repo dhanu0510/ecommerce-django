@@ -30,7 +30,7 @@ def addOrderItems(request):
             paymentMethod=data['paymentMethod'],
             taxPrice=data['taxPrice'],
             shippingPrice=data['shippingPrice'],
-            totalPrice=data['totalPrice']
+            totalPrice=data['totalPrice'],
         )
 
         # (2) Create shipping address
@@ -55,6 +55,7 @@ def addOrderItems(request):
                 qty=i['quantity'],
                 price=i['price'],
                 image=product.image.url,
+                vendor=i['vendor'],
             )
 
             # (4) Update stock
