@@ -16,6 +16,11 @@ from datetime import datetime
 def addOrderItems(request):
     user = request.user
     data = request.data
+    # print(data)
+    # print(data["taxPrice"])
+    # print(data["shippingPrice"])
+    # print(data["totalPrice"])
+    # print(data['paymentMethod'])
 
     orderItems = data['orderItems']
 
@@ -32,7 +37,7 @@ def addOrderItems(request):
             shippingPrice=data['shippingPrice'],
             totalPrice=data['totalPrice'],
         )
-
+        print("done-1")
         # (2) Create shipping address
 
         shipping = ShippingAddress.objects.create(
