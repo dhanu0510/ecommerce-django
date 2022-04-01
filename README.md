@@ -66,19 +66,27 @@
    ```sh
    cd ecommerce-django
    ```
-3. Install Python Environment
+3. Create Python Environment and Install Dependencies
+
    ```sh
+    python3 -m venv venv
+    source venv/bin/activate
     pip install -r requirements.txt
    ```
-4. createsuperuser (for admin login)
-   ```sh
-    python manage.py createsuperuser
-   ```
-5. Run the server
+
+4. Run the server
+
    ```sh
     python manage.py runserver
    ```
-   (Note: Use username and password which you have created for admin login( step - 4))
+
+   (Note: username : 'admin@gmail.com' and password : 'admin')
+
+   <br/>
+
+   Homepage : `http://localhost:8000/`
+   <br/>
+   Admin : `http://localhost:8000/admin/`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
